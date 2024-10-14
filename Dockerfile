@@ -9,7 +9,10 @@ COPY . .
 
 RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
-RUN pnpm build
+RUN pnpm editor-ext:build
+RUN pnpm server:build
+RUN pnpm client:build
+#RUN pnpm build
 
 FROM base AS installer
 
