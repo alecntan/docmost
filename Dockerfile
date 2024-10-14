@@ -25,6 +25,7 @@ COPY --from=builder /app/apps/server/package.json /app/apps/server/package.json
 # Copy packages
 COPY --from=builder /app/packages/editor-ext/dist /app/packages/editor-ext/dist
 COPY --from=builder /app/packages/editor-ext/package.json /app/packages/editor-ext/package.json
+COPY --from=builder /app/patches/react-arborist@3.4.0.patch /app/patches/react-arborist@3.4.0.patch
 
 # Copy root package files
 COPY --from=builder /app/package.json /app/package.json
